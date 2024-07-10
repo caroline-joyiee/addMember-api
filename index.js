@@ -9,13 +9,16 @@ import { dbConnection } from "./db.js";
 
 //create an app
 const app = express();
+
+
+//middleware
 app.use(express.json());
 
 
 dbConnection();
 
 
-//middleware
+
 
 app.use(express.static('image'));
 app.use (addMemberRouter);

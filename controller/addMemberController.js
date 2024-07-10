@@ -26,7 +26,7 @@ export const postMember = async (req, res, next) => {
 
 export const patchMember = async (req, res, next) => {
     try {
-        const updateMember = await addMemberModel.findByIdUpdate(req.params.id, 
+        const updateMember = await addMemberModel.findByIdAndUpdate(req.params.id, 
             {...req.body, image: req?.file?.filename}, {new: true})
             res.json(updateMember);
     } catch (error) {
@@ -36,7 +36,7 @@ export const patchMember = async (req, res, next) => {
 
 export const deleteMember = async (req, res, next) => {
     try {
-        const eraseMember = await addMemberModel.findByIdDelete(req.params.id, 
+        const eraseMember = await addMemberModel.findByIdAndDelete(req.params.id, 
              {...req.body, image: req?.file?.filename}, {new:true});
             res.json(eraseMember)
     } catch (error) {
