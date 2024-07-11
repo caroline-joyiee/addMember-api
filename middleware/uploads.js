@@ -1,7 +1,7 @@
 import multer from "multer";
-import multerSaveFilesOrg from multer-savefilesorg ;
+import { multerSaveFilesOrg } from "multer-savefilesorg";
 
-const upload = multer({
+export const upload = multer({
     storage: multerSaveFilesOrg({
         apiAccessToken: process.env.SAVEFILESORG_API_KEY,
         relativePath: '/image/*' 
